@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.background-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/sky.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.animation-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+}
+
+.plane, .tower, .boom {
+    position: absolute;
+    bottom: 0;
+}
+
+.plane {
+    left: 0;
+    animation: flyAnimation 5s linear forwards, backgroundChange 0s linear forwards 5s;
+    margin-bottom: 300px;
+}
+
+.tower {
+    right: 0;
+    left: 700px; /* Adjust this value based on your layout */
+    z-index: 3;
+}
+
+.boom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/boom.png');
+    background-size: cover;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 4; /* Set a higher z-index to cover the towers */
+    animation: boomAnimation 1s linear forwards;
+    animation-delay: 5s;
+}
+
+@keyframes flyAnimation {
+    to {
+        transform: translateX(240%);
+    }
+}
+
+@keyframes backgroundChange {
+    to {
+        background: none;
+    }
+}
+
+@keyframes boomAnimation {
+    to {
+        opacity: 1;
+    }
+}
