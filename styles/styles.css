@@ -33,7 +33,7 @@ body {
 
 .tower {
     right: 0;
-    left: 700px; /* Adjust this value based on your layout */
+    left: 700px; 
     z-index: 3;
 }
 
@@ -47,7 +47,7 @@ body {
     background-size: cover;
     opacity: 0;
     pointer-events: none;
-    z-index: 4; /* Set a higher z-index to cover the towers */
+    z-index: 4; 
     animation: boomAnimation 1s linear forwards;
     animation-delay: 5s;
 }
